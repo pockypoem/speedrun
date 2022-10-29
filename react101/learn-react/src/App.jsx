@@ -1,58 +1,49 @@
-import {
-    IconBrandFacebook,
-    IconBrandGithub,
-    IconBrandTwitter,
-} from '@tabler/icons';
-import clsx from 'clsx';
+// import { IconBrandFacebook, IconBrandGithub, IconBrandTwitter } from '@tabler/icons';
+// import clsx from 'clsx';
+// import Button from './components/Button';
+import Button from './components/Button';
+import Card from './components/Card';
 
-export default function App() {
+function App() {
     const type = 'submit';
     const onClick = () => console.log('Login with another style');
     return (
-        <div className={'bg-slate-900 grid place-content-center min-h-screen'}>
-            <div className='flex gap-x-2'>
+        <div className={'bg-slate-100 text-slate-800 tracking-tight antialiased flex items-center justify-center  min-h-screen'}>
+            <div className='max-w-md w-full'>
+                <Card>
+                    <Card.Title>Hello React</Card.Title>
+                    <Card.Body>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat optio iure nesciunt tempore sequi omnis laudantium magnam
+                        amet quam voluptatum.
+                    </Card.Body>
+                    <Card.Footer>
+                        <Button>Register</Button>
+                    </Card.Footer>
+                </Card>
+            </div>
+            {/* <div className='flex gap-x-2'>
                 <Button {...{ type, onClick }}>
                     <IconBrandFacebook />
                     Login
                 </Button>
-                <Button
-                    className='bg-sky-600'
-                    onClick={() => console.log('Login')}
-                    type='reset'
-                >
+                <Button className='bg-sky-600' onClick={() => console.log('Login')} type='reset'>
                     <IconBrandTwitter />
                     Login
                 </Button>
-                <Button
-                    className='bg-black-500'
-                    onClick={() => console.log('Login')}
-                    type='button'
-                >
+                <Button className='bg-black-500' onClick={() => console.log('Login')} type='button'>
                     <IconBrandGithub />
                     Login
                 </Button>
-            </div>
+            </div> */}
         </div>
     );
 }
 
-function Button(props) {
-    const {
-        className = 'bg-blue-600',
-        children,
-        text,
-        type = 'submit',
-    } = props;
-    return (
-        <button
-            {...props}
-            type={type}
-            className={clsx(
-                className,
-                '${className} [&>svg]:w-5 [&>svg]:h-5 [&>svg]:stroke-1 flex items-center gap-x-2 text-white px-4 py-2 rounded'
-            )}
-        >
-            {text || children}
-        </button>
-    );
-}
+// const Title = () => {
+//     <>
+//         <h1>Hello World</h1>
+//         <h4>Hello World</h4>
+//     </>
+// }
+
+export default App;
