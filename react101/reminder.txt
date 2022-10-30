@@ -1,0 +1,4 @@
+npm run build
+hellow-react % serve -s build
+
+Before run on the internet, don't forget to npm run build
