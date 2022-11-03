@@ -1,7 +1,7 @@
 import './index.css';
 import Employee from './components/Employee';
 import { useState } from 'react';
-import EditEmployee from './components/EditEmployee';
+// import EditEmployee from './components/EditEmployee';
 // import {v4 as uuidv4 } from 'uuid';
 
 function App() {
@@ -48,14 +48,14 @@ function App() {
     ]
   );
 
-  function updatedEmployees(id, newName, newRole) {
+  function updateEmployee(id, newName, newRole) {
     const updatedEmployees = employees.map((employee) => {
       if (id === employee.id) {
         // return new
         return {...employee, name: newName, role:newRole};
       }
 
-      return employee
+      return employee;
     });
     setEmployees(updatedEmployees);
   }
@@ -66,13 +66,12 @@ function App() {
       {showEmployees ?
         <>
           <input type="text" onChange={(e) => {
-            console.log(e.target.value);
             setRole(e.target.value);
           }}/>
           <div className='flex flex-wrap justify-center'>
             {/* Loop through our state data */}
             {employees.map((employee) => {
-              {/* console.log(uuidv4()); */}
+              
               return(
                 <Employee 
                   key= {employee.id}
@@ -80,7 +79,7 @@ function App() {
                   name={employee.name} 
                   role={employee.role} 
                   img={employee.img}
-                  updateEmployee={EditEmployee}
+                  updateEmployee={updateEmployee}
                 />
               )
               
